@@ -48,13 +48,13 @@ def create_payload(tickers):
     return payload
 
   # Returns payload for given tickers
-  tickers = ["AIAENG", "APLAPOLLO"] # List of tickers to be subscribed, Use the given nifty500 list symbols for reference
-  payload = create_payload(ticker)
+tickers = ["AIAENG", "APLAPOLLO"] # List of tickers to be subscribed, Use the given nifty500 list symbols for reference
+payload = create_payload(ticker)
 
   # Subscribe Tickers on Websocket 
-  ws.send(json.dumps(payload))
+ws.send(json.dumps(payload))
 
   # Recieve ltp for the subscribed tickers 
-  while True:
-    data = json.loads(ws.recv())
-    print(data)
+while True:
+  data = json.loads(ws.recv())
+  print(data)
