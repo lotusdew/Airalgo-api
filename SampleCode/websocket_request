@@ -1,0 +1,60 @@
+from websocket import create_connection, WebSocketConnectionClosedException
+import json
+from websocket_connect import get_api_key
+
+# Check and Establish connection with websocket
+ws = create_connection(f"ws://{give_ip}:{given_port}/socket/websocket")
+
+# Payload to authenticate with the websocket
+conn = {
+    "topic" : "api:room",
+    "event" : "phx_join",
+    "payload" :
+        {
+            "api_key": str(api_key),
+            "access_token" : str(get_api_key(api_key))
+        },
+    "ref" : ""
+    }
+
+# Authenticate with websocket
+ws.send(json.dumps(conn))
+print(ws.recv())
+
+# Create Payload to subscribe Equity ltp 
+def create_payload(tickers):
+    # tickers = ["AIAENG", "APLAPOLLO"] #List of tickers to subscribe
+    symbol_list = []
+    for i in tickers:
+        symbol_list.append(
+            {
+                "symbol": i,
+                "instrument": "EQUITY",
+                "option_type": "EQ",
+                "expiry_date": "0",
+                "strike_price": 0
+            }
+        )
+
+    payload = {
+      "topic" : "api:room",
+      "event" : "ltp_quote", 
+      "payload" : {
+        "list": symbol_list
+        }, 
+      "ref" : ""
+      }
+
+    return payload
+
+  # Returns payload for given tickers
+  tickers = ["AIAENG", "APLAPOLLO"] # List of tickers to be subscribed, Use the given nifty500 list symbols for reference
+  payload = create_payload(ticker)
+
+  # Subscribe Tickers on Websocket 
+  ws.send(json.dumps(payload))
+
+  # Recieve ltp for the subscribed tickers 
+  while True:
+    data = json.loads(ws.recv())
+    print(data)
