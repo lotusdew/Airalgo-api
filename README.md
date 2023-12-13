@@ -127,3 +127,38 @@ The "data" recieved is a JSON format data with the ltp of the equity:
     "topic": "api:join"
 }
 ```
+## How data is sent from websocket ?
+- The data of every tickers is recieved from the websocket response at ltp_response event. Average time between two ltp response events is 1 second for an individual ticker.
+
+## How to get the ltp data from the code ?
+- Can be done in mutliple ways, whereas one example is given below:
+```Python
+while True:
+    data = json.dumps(ws.recv())
+    processed_data = process_function(data)
+```
+Now we can keep track of the Symbol for which we have received data in "data" variable by checking "data["payload"]["symbol"]"
+- The other way to receive the data in program is to ws.run_forever() as listed in <a href="https://websocket-client.readthedocs.io/en/latest/examples.html"> Websocket-client docs </a>
+
+
+### Place Orders :
+```Python
+order = {
+            "topic" : "api:join",
+            "event" : "order",
+            "payload" :
+                {
+                    "phone_no" : "1234512345",
+                    "symbol" : "EQUITY_SYMBOL", 
+                    "buy_sell" : "B", #"B" for BUY orders and "S" for SELL orders
+                    "quantity" : 1, #Quantity to be traded
+                    "price" : 1012.34 #Price can be taken from ltp, the orders will be placed at the same price
+                },
+            "ref" : ""
+        }
+ws.send(json.dumps(order))
+```
+Response for successful placed order : 
+```JSON
+
+```
