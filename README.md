@@ -87,7 +87,7 @@ Else, In case of invalid user:
 After successfully creating connection and authenticate the client to the websocket, Now we are ready to subscribe one or multiple tickers to get their ltp data : 
 Request for LTP is as follows :
 ```Python
-tickers = ["symbol_of_equity"]
+tickers = ["symbol_of_equity_1", "symbol_of_equity_2", "symbol_of_equity_3"]
 ltp_tickers = {
   "topic" : "api:join",
   "event" : "ltp_quote",
@@ -96,6 +96,7 @@ ltp_tickers = {
 }
 ws.send(json.dumps(ltp_tickers)) #This will subscribe the list of tickers passed in the payload 
 ```
+- Note: tickers is a list of equity symbols, even for one symbol, create a list with one symbol
 - This will subscribe the websocket with the ticker data which is sent continously to the connection from websocket at a time gap of 1 second.
 To recieve the data sequentially, use :
 ```Python
