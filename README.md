@@ -3,7 +3,7 @@
 <h1>Documentation for Lotusdew Trading Api</h1>
 <p>Trading api for lotusdew trading platform and it's documentation</p>
 
-<h4> <span> · </span> <a href="https://github.com/pranavtomar01/IIIT-Campus-Hiring/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/pranavtomar01/IIIT-Campus-Hiring/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/pranavtomar01/IIIT-Campus-Hiring/issues"> Request Feature </a> </h4>
+<h4> <span> · </span> <a href="https://github.com/pranavtomar01/Airalgo-api/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/pranavtomar01/Airalgo-api/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/pranavtomar01/Airalgo-api/issues"> Request Feature </a> </h4>
 
 
 </div>
@@ -12,11 +12,13 @@
 
 - [About the Project](#star2-about-the-project)
 - [Prerequisites](#bangbang-prerequisites)
+- [
 
 ## :star2: About the Project
 - This project contains a brief desciption of the Trading API's, their functions and their responses.
 
-### :bangbang: Prerequisites
+
+## :bangbang: Prerequisites
 
 - Python 3
 - websocket-client
@@ -28,22 +30,13 @@ pip3 install websocket-client
 pip3 install websocket
 ```
 
-### :test_tube: Running Tests
-
-Run the websocket code to test the connection
-```bash
-python3 websocket_request.py
-```
-
-## :toolbox: Getting Started
-
-## Documentation : 
-#### Connecting to the trading server via Websocket connection : 
+# Documentation : 
+## Connecting to the trading server via Websocket connection : 
 * To establish the connection we first try to create connection and check the response : 
 ```Python
 from websocket import create_connection
 
-ws = websocket.create_connection("url", sslopt={"cert_reqs": ssl.CERT_NONE})
+ws = websocket.create_connection("wss://api.airalgo.com/socket/websocket", sslopt={"cert_reqs": ssl.CERT_NONE})
 print(ws.status) #Check the status of connection, "101" for successfull connection
 ```
 
@@ -87,7 +80,7 @@ Else, In case of invalid user:
 }
 ```
 
-### Request for LTP(Last Traded Price) for multiple tickers :
+## Request for LTP(Last Traded Price) for multiple tickers :
 After successfully creating connection and authenticate the client to the websocket, Now we are ready to subscribe one or multiple tickers to get their ltp data : 
 Request for LTP is as follows :
 ```Python
@@ -127,10 +120,10 @@ The "data" recieved is a JSON format data with the ltp of the equity:
     "topic": "api:join"
 }
 ```
-## How data is sent from websocket ?
+### How data is sent from websocket ?
 - The data of every tickers is recieved from the websocket response at ltp_response event. Average time between two ltp response events is 1 second for an individual ticker.
 
-## How to get the ltp data from the code ?
+### How to get the ltp data from the code ?
 - Can be done in mutliple ways, whereas one example is given below:
 ```Python
 while True:
@@ -141,7 +134,7 @@ Now we can keep track of the Symbol for which we have received data in "data" va
 - The other way to receive the data in program is to ws.run_forever() as listed in <a href="https://websocket-client.readthedocs.io/en/latest/examples.html"> Websocket-client docs </a>
 
 
-### Place Orders :
+## Place Orders :
 ```Python
 order = {
             "topic" : "api:join",
@@ -160,5 +153,50 @@ ws.send(json.dumps(order))
 ```
 Response for successful placed order : 
 ```JSON
-
+{
+    "event": "order_response", 
+    "payload": {
+        "buy_sell": "B", 
+        "order_no": 2461594562, #Order Number
+        "phone_no": "1234512345",
+        "price": 333434343, #Price at which order is placed
+        "quantity": 3, #Quantity Confirmed
+        "symbol": "ACC" #Trading Symbol
+    },
+    "ref": null,
+    "topic": "api:join"
+}
 ```
+
+In case of Margin limit exceed, order will be rejected with response : 
+```JSON
+{
+    "event": "order_response",
+    "payload": {
+        "reason": "Margin limit exceeded",
+        "status": "Order Rejected"
+    },
+    "ref": null,
+    "topic": "api:join"
+}
+```
+
+In case of Invalid Symbol, order will be rejected with response :
+```JSON
+{
+    "event": "order_response",
+    "payload": {
+        "reason": "Invalid Symbol",
+        "status": "Order Rejected"
+    },
+    "ref": null,
+    "topic": "api:join"
+}
+```
+
+# FAQ :
+### How many tickers can be subscribed at once ?
+- Any number of valid tickers are allowed to be subscribed, if you subscribe "N" symbols at once, you will recieve "N" number of response on the websocket after every second.
+
+### How do we identify if the response received on websocket is response of order placed or ltp subscribed?
+- Can be identified through event name, "ltp_response" for ltp and "order_response" for order placed response.
