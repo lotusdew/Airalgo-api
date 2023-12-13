@@ -10,15 +10,18 @@
 
 # :notebook_with_decorative_cover: Table of Contents
 
-- [About the Project](#star2-about-the-project)
-- [Prerequisites](#bangbang-prerequisites)
-- [
 
-## :star2: About the Project
+- [About the Project](#about-the-project)
+- [Prerequisites](#prerequisites)
+- [Documentation](#documentation)
+- [FAQ](#FAQ)
+
+
+## :star2: About the Project<a name="about-the-project"></a>
 - This project contains a brief desciption of the Trading API's, their functions and their responses.
 
 
-## :bangbang: Prerequisites
+## :bangbang: Prerequisites<a name="prerequisites"></a>
 
 - Python 3
 - websocket-client
@@ -30,7 +33,7 @@ pip3 install websocket-client
 pip3 install websocket
 ```
 
-# Documentation : 
+# Documentation: <a name="documentation"></a>
 ## Connecting to the trading server via Websocket connection : 
 * To establish the connection we first try to create connection and check the response : 
 ```Python
@@ -194,7 +197,7 @@ In case of Invalid Symbol, order will be rejected with response :
 }
 ```
 
-# FAQ :
+# FAQ :<a name="FAQ"></a>
 ### How many tickers can be subscribed at once ?
 - Any number of valid tickers are allowed to be subscribed, if you subscribe "N" symbols at once, you will recieve "N" number of response on the websocket after every second.
 
