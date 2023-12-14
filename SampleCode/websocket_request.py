@@ -30,9 +30,7 @@ def create_payload(tickers):
     payload = {
       "topic" : "api:join",
       "event" : "ltp_quote", 
-      "payload" : {
-        "list": symbol_list
-        }, 
+      "payload" : symbol_list, 
       "ref" : ""
       }
 
