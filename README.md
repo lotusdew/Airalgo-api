@@ -32,6 +32,10 @@ pip3 install websocket-client
 ```bash
 pip3 install websocket
 ```
+Version:
+websocket==0.2.1
+websocket-client==1.7.0
+
 
 # Documentation: <a name="documentation"></a>
 ## Connecting to the trading server via Websocket connection : 
