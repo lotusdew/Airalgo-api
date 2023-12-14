@@ -28,7 +28,7 @@ Alkem Laboratories Ltd.,Healthcare,ALKEM,EQ,INE540L01014
 Alkyl Amines Chemicals Ltd.,Chemicals,ALKYLAMINE,EQ,INE150B01039
 Allcargo Logistics Ltd.,Services,ALLCARGO,EQ,INE418H01029
 Alok Industries Ltd.,Textiles,ALOKINDS,EQ,INE270A01029
-Amara Raja Batteries Ltd.,Automobile and Auto Components,AMARAJABAT,EQ,INE885A01032
+Amara Raja Energy & Mobility Ltd.,Automobile and Auto Components,ARE&M,EQ,INE885A01032
 Amber Enterprises India Ltd.,Consumer Durables,AMBER,EQ,INE371P01015
 Ambuja Cements Ltd.,Construction Materials,AMBUJACEM,EQ,INE079A01024
 Angel One Ltd.,Financial Services,ANGELONE,EQ,INE732I01013
@@ -115,6 +115,7 @@ Cochin Shipyard Ltd.,Capital Goods,COCHINSHIP,EQ,INE704P01017
 Coforge Ltd.,Information Technology,COFORGE,EQ,INE591G01017
 Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,COLPAL,EQ,INE259A01022
 Computer Age Management Services Ltd.,Financial Services,CAMS,EQ,INE596I01012
+Concord Biotech Ltd.,Healthcare,CONCORDBIO,EQ,INE338H01029
 Container Corporation of India Ltd.,Services,CONCOR,EQ,INE111A01025
 Coromandel International Ltd.,Chemicals,COROMANDEL,EQ,INE169A01031
 Craftsman Automation Ltd.,Automobile and Auto Components,CRAFTSMAN,EQ,INE00LO01017
@@ -246,7 +247,7 @@ InterGlobe Aviation Ltd.,Services,INDIGO,EQ,INE646L01027
 Ipca Laboratories Ltd.,Healthcare,IPCALAB,EQ,INE571A01038
 J.B. Chemicals & Pharmaceuticals Ltd.,Healthcare,JBCHEPHARM,EQ,INE572A01036
 J.K. Cement Ltd.,Construction Materials,JKCEMENT,EQ,INE823G01014
-JBM Auto Ltd.,Automobile and Auto Components,JBMA,BE,INE927D01044
+JBM Auto Ltd.,Automobile and Auto Components,JBMA,EQ,INE927D01044
 JK Lakshmi Cement Ltd.,Construction Materials,JKLAKSHMI,EQ,INE786A01032
 JK Paper Ltd.,Forest Materials,JKPAPER,EQ,INE789E01012
 JM Financial Ltd.,Financial Services,JMFINANCIL,EQ,INE780C01023
@@ -275,7 +276,6 @@ Karur Vysya Bank Ltd.,Financial Services,KARURVYSYA,EQ,INE036D01028
 Kaynes Technology India Ltd.,Capital Goods,KAYNES,EQ,INE918Z01012
 Kec International Ltd.,Capital Goods,KEC,EQ,INE389H01022
 Kfin Technologies Ltd.,Financial Services,KFINTECH,EQ,INE138Y01010
-Kirloskar Ferrous Industries Ltd.,Metals & Mining,KIRLFER,EQ,INE884B01025
 Kotak Mahindra Bank Ltd.,Financial Services,KOTAKBANK,EQ,INE237A01028
 Krishna Institute of Medical Sciences Ltd.,Healthcare,KIMS,EQ,INE967H01017
 L&T Finance Holdings Ltd.,Financial Services,L&TFH,EQ,INE498L01015
@@ -349,7 +349,7 @@ PNB Housing Finance Ltd.,Financial Services,PNBHOUSING,EQ,INE572E01012
 PNC Infratech Ltd.,Construction,PNCINFRA,EQ,INE195J01029
 PVR INOX Ltd.,Media Entertainment & Publication,PVRINOX,EQ,INE191H01014
 Page Industries Ltd.,Textiles,PAGEIND,EQ,INE761H01022
-Patanjali Foods Ltd.,Fast Moving Consumer Goods,PATANJALI,BE,INE619A01035
+Patanjali Foods Ltd.,Fast Moving Consumer Goods,PATANJALI,EQ,INE619A01035
 Persistent Systems Ltd.,Information Technology,PERSISTENT,EQ,INE262H01013
 Petronet LNG Ltd.,Oil Gas & Consumable Fuels,PETRONET,EQ,INE347G01014
 Pfizer Ltd.,Healthcare,PFIZER,EQ,INE182A01018
@@ -417,7 +417,7 @@ Sonata Software Ltd.,Information Technology,SONATSOFTW,EQ,INE269A01021
 Star Health and Allied Insurance Company Ltd.,Financial Services,STARHEALTH,EQ,INE575P01011
 State Bank of India,Financial Services,SBIN,EQ,INE062A01020
 Steel Authority of India Ltd.,Metals & Mining,SAIL,EQ,INE114A01011
-Sterling and Wilson Renewable Energy Ltd.,Construction,SWSOLAR,BE,INE00M201021
+Sterling and Wilson Renewable Energy Ltd.,Construction,SWSOLAR,EQ,INE00M201021
 Sterlite Technologies Ltd.,Telecommunication,STLTECH,EQ,INE089C01029
 Sumitomo Chemical India Ltd.,Chemicals,SUMICHEM,EQ,INE258G01013
 Sun Pharma Advanced Research Company Ltd.,Healthcare,SPARC,EQ,INE232I01014
@@ -429,7 +429,7 @@ Sunteck Realty Ltd.,Realty,SUNTECK,EQ,INE805D01034
 Suprajit Engineering Ltd.,Automobile and Auto Components,SUPRAJIT,EQ,INE399C01030
 Supreme Industries Ltd.,Capital Goods,SUPREMEIND,EQ,INE195A01028
 Suven Pharmaceuticals Ltd.,Healthcare,SUVENPHAR,EQ,INE03QK01018
-Suzlon Energy Ltd.,Capital Goods,SUZLON,EQ,INE040H01021
+Suzlon Energy Ltd.,Capital Goods,SUZLON,BE,INE040H01021
 Swan Energy Ltd.,Realty,SWANENERGY,EQ,INE665A01038
 Symphony Ltd.,Consumer Durables,SYMPHONY,EQ,INE225D01027
 Syngene International Ltd.,Healthcare,SYNGENE,EQ,INE398R01022

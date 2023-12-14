@@ -1,6 +1,5 @@
 from websocket import create_connection, WebSocketConnectionClosedException
 import json
-from websocket_connect import get_api_key
 
 # Check and Establish connection with websocket
 ws = websocket.create_connection("wss://api.airalgo.com/socket/websocket", sslopt={"cert_reqs": ssl.CERT_NONE})
