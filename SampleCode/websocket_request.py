@@ -69,17 +69,17 @@ while True:
   # } 
 
   # Place Order, json = {"topic" : "api:join", "event" : "order", "payload" : {"phone_no" : "9634699119", "symbol" : "ACC", "buy_sell" : "B", "quantity" : 1, "price" : 1012.34}, "ref" : ""}
-  order = {
-     "topic" : "api:join", 
-     "event" : "order", 
-     "payload" : {
-        "phone_no" : "9634699119", 
-        "symbol" : "ACC", 
-        "buy_sell" : "B", 
-        "quantity" : 1, 
-        "price" : 1012.34
-        }, 
-      "ref" : ""
-      }
-  ws.send(json.dumps(order))
+  # order = {
+  #    "topic" : "api:join", 
+  #    "event" : "order", 
+  #    "payload" : {
+  #       "phone_no" : "9634699119", 
+  #       "symbol" : "ACC", 
+  #       "buy_sell" : "B", 
+  #       "quantity" : 1, 
+  #       "price" : 1012.34
+  #       }, 
+  #     "ref" : ""
+  #     }
+  # ws.send(json.dumps(order))
   print(data)
